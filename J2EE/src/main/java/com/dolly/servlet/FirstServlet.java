@@ -19,18 +19,19 @@ public class FirstServlet extends HttpServlet {
   @Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	  
-//	  String name = req.getParameter("name");
-//	  String desg = req.getParameter("desg");
+	  String name = req.getParameter("name");
+	  String desg = req.getParameter("desg");
 //	  String tech = req.getParameter("techskills");
 //	  
-//	  System.out.println("name = "+name);
-//	  System.out.println("desg = "+desg);
-//	  System.out.println("techskills = "+tech);
-	  
-	 Enumeration<String> pn = req.getParameterNames();
-	 while(pn.hasMoreElements()) {
-		System.out.println( pn.nextElement());
-	 }
+ 
+	String[] pv =req.getParameterValues("techskills");
+	
+	System.out.println("name = "+name);
+	  System.out.println("desg = "+desg);
+	 
+	  for(String i : pv) {
+		  System.out.println(i);
+	  }
 		
 	}
  
