@@ -2,6 +2,7 @@ package com.dolly.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,13 +19,18 @@ public class FirstServlet extends HttpServlet {
   @Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	  
-	  String name = req.getParameter("name");
-	  String desg = req.getParameter("desg");
-	  String tech = req.getParameter("techskills");
+//	  String name = req.getParameter("name");
+//	  String desg = req.getParameter("desg");
+//	  String tech = req.getParameter("techskills");
+//	  
+//	  System.out.println("name = "+name);
+//	  System.out.println("desg = "+desg);
+//	  System.out.println("techskills = "+tech);
 	  
-	  System.out.println("name = "+name);
-	  System.out.println("desg = "+desg);
-	  System.out.println("techskills = "+tech);
+	 Enumeration<String> pn = req.getParameterNames();
+	 while(pn.hasMoreElements()) {
+		System.out.println( pn.nextElement());
+	 }
 		
 	}
  
