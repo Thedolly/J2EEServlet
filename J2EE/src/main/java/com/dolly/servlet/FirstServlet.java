@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +33,22 @@ public class FirstServlet extends HttpServlet {
 	  for(String i : pv) {
 		  System.out.println(i);
 	  }
+	  
+//	  RequestDispatcher rd =req.getRequestDispatcher("staticresp.html");
+//	  rd.forward(req, resp);
+	  
+	  resp.setContentType("text/html");
+	 PrintWriter writer =  resp.getWriter();
+	 writer.println(" <html>\r\n"
+	 		+ "<head>\r\n"
+	 		+ "<meta charset=\"ISO-8859-1\">\r\n"
+	 		+ "<title>Insert title here</title>\r\n"
+	 		+ "</head>\r\n"
+	 		+ "<body>\r\n"
+	 		+ "<h3>Thanks "+name +"</h3>\r\n"
+	 		+ "</body>\r\n"
+	 		+ "</html>");
+	 
 		
 	}
  
